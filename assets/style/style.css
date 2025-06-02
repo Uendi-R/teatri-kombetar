@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 :root {
@@ -8,14 +9,18 @@
   --border-radius-size: 10px;
 }
 
-::selection {
-  background: #797878;
-  color: white;
-  text-shadow: none;
-}
-
 body {
   background: #f8f8f8;
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  background-color: rgba(248, 248, 248, 0.75);
+  border-bottom: 1px solid #dcdcdc;
 }
 
 .navbar {
@@ -24,14 +29,33 @@ body {
   align-items: center;
   justify-content: space-between;
   border-bottom: black;
-  position: sticky;
-  top: 0;
-  margin: 0;
-  backdrop-filter: blur(20px);
-  z-index: 1000;
-  background-color: rgba(248, 248, 248, 0.75);
-  border-bottom: 1px solid #dcdcdc;
 
+  a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+  }
+}
+
+.navbar-title {
+  p {
+    font-size: 30px;
+    margin-bottom: 0;
+    display: flex;
+
+    a {
+      padding-top: 5px;
+    }
+  }
+
+  img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+  }
+}
+
+.navbar-list {
   ul {
     list-style-type: none;
     margin: 0;
@@ -41,20 +65,15 @@ body {
 
   a {
     display: block;
-    color: black;
-    text-decoration: none;
-    text-align: center;
     padding: 14px 16px;
   }
-
-  /*
-  a:hover {
-    zmadho pal tekstin
-  }*/
 }
+
 /* Rreth Nesh*/
 .rrethnesh {
   display: flex;
+  padding: 3rem 10rem 10rem 10rem;
+  gap: 10rem;
 }
 
 /* bar */
@@ -107,6 +126,7 @@ body {
   }
 }
 
+/* arkiva */
 .info {
   display: flex;
   justify-content: space-around;
@@ -121,14 +141,28 @@ body {
   }
 }
 
+.info-img {
+  width: 300px;
+  height: 200px;
+}
+
 .bar-width {
   width: 6rem;
 }
 
 .arkiva-title {
   color: black;
+  margin-bottom: 0;
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-weight: bolder;
 }
 
+.info-title {
+  color: #83631e;
+}
+
+/* kalendari */
 .calendar {
   display: flex;
   background: #1d1d1d;
@@ -137,7 +171,7 @@ body {
 
 .subscribe {
   display: flex;
-  background: #1d1d1d;
+  background: var(--bg-color-dark-gray);
   color: #f8f8f8;
   padding: 12px;
   justify-content: space-between;
@@ -146,9 +180,20 @@ body {
   a {
     color: #f8f8f8;
   }
+
+  & > p {
+    margin: 0;
+  }
 }
 
 /* trupa artistike */
+
+#trupa-artistike {
+  & > h2 {
+    margin: 40px 0;
+    text-align: center;
+  }
+}
 .artistet {
   display: flex;
   justify-content: space-around;
@@ -157,34 +202,227 @@ body {
 .aktoret-img {
   width: 150px;
   border-radius: 50%;
+  box-shadow: 5px 5px 10px var(--bg-color-dark-gray);
+  margin-bottom: 15px;
+}
+
+.aktoret {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 /* harta */
+#vendndodhja {
+  & > h2 {
+    margin: 16px 0;
+    text-align: center;
+  }
+}
 #map {
   height: 180px;
 }
 
 /* footer */
 footer {
-  background: #1d1d1d;
+  background: var(--bg-color-dark-gray);
   color: #f8f8f8;
+  padding-top: 24px;
 
   a {
     color: #f8f8f8;
+  }
+
+  .col-first {
+    img {
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+    }
+  }
+
+  .col-second {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 16px;
+    }
+  }
+
+  .first-in {
+    padding-top: 54px;
+  }
+
+  .col-third {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.footer-title {
+  display: flex;
+  margin-bottom: 16px;
+  gap: 10px;
+
+  p {
+    margin-bottom: 0;
+    font-size: 25px;
   }
 }
 
 .footer-info {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 16px;
 }
 
-.col-second {
-  display: flex;
-  flex-direction: column;
+/*kalendari vazhdimi*/
+#calendar-nav {
+  background-color: var(--bg-color-dark-gray);
+  padding: 1rem 6rem 2rem 6rem;
+
+  & > #calendar-content {
+    display: flex;
+    gap: 10px;
+  }
 }
 
-.col-third {
+.date-box {
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+
+  & > .month {
+    padding: 0.5rem 0.25rem;
+    border-bottom: 1px dashed white;
+    font-size: 0.75rem;
+  }
+
+  & > .date {
+    padding: 0.1rem 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &:hover {
+    background-color: white;
+    color: var(--bg-color-dark-gray);
+    cursor: pointer;
+
+    & > .month {
+      border-bottom-color: var(--bg-color-dark-gray);
+    }
+  }
+}
+
+#calendar-buttons {
+  margin-left: auto;
+  width: fit-content;
+
+  & > .material-symbols-outlined {
+    color: white;
+    font-size: 2rem;
+    user-select: none;
+    margin-bottom: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/* resposive */
+@media (max-width: 1294px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .carousel-item img {
+    height: 400px;
+  }
+
+  .navs > a.bar-width {
+    width: auto;
+  }
+
+  .rrethnesh {
+    img {
+      display: none;
+    }
+  }
+
+  .rrethnesh-info h2 {
+    font-size: 2rem;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+
+    .artistet {
+      grid-template-justify-content: center;
+      columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .aktoret-img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+/*small*/
+@media (max-width: 690px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .carousel-item img {
+    height: 400px;
+  }
+
+  .navs > a.bar-width {
+    width: auto;
+  }
+
+  .rrethnesh {
+    padding: 70px;
+
+    img {
+      display: none;
+    }
+  }
+
+  .rrethnesh-info h2 {
+    font-size: 2rem;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .artistet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .aktoret-img {
+    width: 120px;
+    height: 120px;
+  }
 }

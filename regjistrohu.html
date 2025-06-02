@@ -3,53 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/logo.png"
+      style="border-radius: 50%"
+    />
     <title>Regjistrohu-Teatri Kombetar</title>
     <link href="assets/style/style_regjistrohu.css" rel="stylesheet" />
   </head>
   <body>
     <!-- navbar -->
     <header id="navbar">
-      <div class="navbar">
-        <p><a>Teatri Kombetar</a></p>
-        <ul>
-          <li><a href="#rrth_nesh">Rreth Nesh</a></li>
-          <li><a href="#">Repertori</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
+      <div class="navbar" style="padding: 0px">
+        <div class="navbar-title">
+          <p>
+            <img src="assets/img/logo.png" />
+            <a href="index.html">Teatri Kombetar</a>
+          </p>
+        </div>
+        <div class="navbar-list">
+          <ul>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
       </div>
     </header>
+
     <!-- forma -->
-    <form>
-      Emri: <input type="text" /> Mbiemri: <input type="text" />
-      <br />
-      Email: <input type="email" />
-      <br />
-      Fjalekalimi: <input type="password" />
-      <br />
-      <input type="submit" value="Dergo" />
-    </form>
+    <section id="forma">
+      <div class="form-container">
+        <h2 class="form-title">Regjistrohu</h2>
+        <form>
+          <div class="form-row">
+            <div class="labels">
+              <input type="text" id="emri" placeholder="emri" />
+            </div>
+            <div class="labels">
+              <input type="text" id="mbiemri" placeholder="mbiemri" />
+            </div>
+          </div>
+          <div class="labels">
+            <input type="email" id="email" placeholder="Email" />
+          </div>
+
+          <div class="labels">
+            <input type="password" id="fjalekalimi" placeholder="Fjalekalimi" />
+          </div>
+
+          <button type="submit" class="submit-btn" onclick="dergimi()">
+            Dërgo
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="inverse-select-color">
+      <div class="footer-info">
+        <div class="col-first">
+          <div class="col-first">
+            <div class="footer-title">
+              <img src="assets/img/logo.png" />
+              <p>Teatri Kombetar</p>
+            </div>
+            <p>
+              Email:
+              <a href="info@teatrikombetar.gov.al"
+                >info@teatrikombetar.gov.al</a
+              >
+            </p>
+            <p>Nr. tel: +355 686868688</p>
+          </div>
+        </div>
+        <div class="col-second">
+          <a href="#" class="first-in" id="kontakt">Kontakt</a>
+          <a href="#">Programi i transparences</a>
+        </div>
+        <div class="col-third">
+          <a href="#" class="first-in">Salla me qera</a>
+          <a href="#">Organigrama</a>
+        </div>
+      </div>
+      <div class="copyright">Copyright &copy; by Teatri Kombetar</div>
+    </footer>
+    <script>
+      function dergimi() {
+        var e = document.getElementById("emri").value;
+        var m = document.getElementById("mbiemri").value;
+
+        if (e == "" || m == "") {
+          alert("Ju lutem plotesoni te gjitha vendet bosh!");
+        }
+      }
+    </script>
   </body>
-  <footer class="inverse-select-color">
-    <div class="footer-info">
-      <div class="col-first">
-        <p>Teatri Kombetar</p>
-        <p>informacion dhe rezervime</p>
-        <p>
-          Email:
-          <a href="info@teatrikombetar.gov.al">info@teatrikombetar.gov.al</a>
-        </p>
-        <p>nr tel: 6868686</p>
-      </div>
-      <div class="col-second">
-        <a href="#">kontaktoni</a>
-        <a href="#">programi i transparences</a>
-        <a href="#">rreth nesh</a>
-      </div>
-      <div class="col-third">
-        <a href="#">salla me qera</a>
-        <a href="#">organigrama</a>
-      </div>
-    </div>
-    <div class="copyright">Copyright &copy; by Teatri Kombetar</div>
-  </footer>
 </html>
