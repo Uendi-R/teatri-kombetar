@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color-dark-gray: #1d1d1d;
+  --border-radius-size: 10px;
+}
+
+::selection {
+  background: #797878;
+  color: white;
+  text-shadow: none;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+.navbar {
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: black;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  background-color: rgba(248, 248, 248, 0.75);
+  border-bottom: 1px solid #dcdcdc;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  /*
+  a:hover {
+    zmadho pal tekstin
+  }*/
+}
+/* Rreth Nesh*/
+.rrethnesh {
+  display: flex;
+}
+
+/* bar */
+.navs {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 10rem;
+
+  a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid #ededed;
+    flex-grow: 1;
+    background: white;
+
+    &:first-child {
+      border-top-left-radius: var(--border-radius-size);
+      border-bottom-left-radius: var(--border-radius-size);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--border-radius-size);
+      border-bottom-right-radius: var(--border-radius-size);
+    }
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    &:hover {
+      background: var(--bg-color-dark-gray);
+      color: white;
+    }
+
+    nav {
+      padding: 2rem;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      span {
+        text-align: center;
+
+        &:first-child {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 2rem;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.bar-width {
+  width: 6rem;
+}
+
+.arkiva-title {
+  color: black;
+}
+
+.calendar {
+  display: flex;
+  background: #1d1d1d;
+  color: #f8f8f8;
+}
+
+.subscribe {
+  display: flex;
+  background: #1d1d1d;
+  color: #f8f8f8;
+  padding: 12px;
+  justify-content: space-between;
+  padding-inline: 24px;
+
+  a {
+    color: #f8f8f8;
+  }
+}
+
+/* trupa artistike */
+.artistet {
+  display: flex;
+  justify-content: space-around;
+}
+
+.aktoret-img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* harta */
+#map {
+  height: 180px;
+}
+
+/* footer */
+footer {
+  background: #1d1d1d;
+  color: #f8f8f8;
+
+  a {
+    color: #f8f8f8;
+  }
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.col-second {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-third {
+  display: flex;
+  flex-direction: column;
+}
